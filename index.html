@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Money Plus – Home Loans | Simplified | Trusted</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #1a2b5e;
+      --navy-dark: #0f1a3d;
+      --gold:      #c9a84c;
+      --gold-light:#e8c96a;
+      --white:     #ffffff;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(108deg, #0f1a3d 0%, #1a2b5e 47%, #ffffff 47%);
+    }
+
+    .gold-arc {
+      position: fixed;
+      top: -10%; right: 30%;
+      width: 55vw; height: 120vh;
+      border-radius: 50%;
+      border: 18px solid transparent;
+      border-right-color: var(--gold);
+      border-bottom-color: var(--gold-light);
+      opacity: 0.45;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .card {
+      position: relative; z-index: 1;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 20px 70px rgba(10,20,60,0.3), 0 0 0 1px rgba(201,168,76,0.2);
+      padding: 48px 44px 40px;
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .gold-line {
+      width: 80px; height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    /* ── LOGO ──────────────────────────────────── */
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 28px;
+    }
+.logo {
+width:180px;
+height:auto;
+displasy:block;
+margin:0 auto 20px;
+background:transparent;
+mix-blend-mode:multiply;
+
+}
+    .logo-svg-wrap {
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      border: 2.5px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 28px rgba(201,168,76,0.25);
+      margin-bottom: 14px;
+      background: #fff;
+    }
+    .logo-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.9rem, 5vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: var(--navy);
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .logo-tagline {
+      font-size: 0.68rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--navy);
+      opacity: 0.65;
+      margin-top: 3px;
+    }
+
+    /* ── HEADLINE ──────────────────────────────── */
+    .headline {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .headline h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .headline h1 em { font-style: normal; color: var(--gold); }
+    .headline p {
+      font-size: 0.92rem;
+      color: #555;
+      max-width: 420px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 20px 0;
+    }
+
+    /* ── COUNTDOWN ─────────────────────────────── */
+    .countdown-wrap {
+      display: flex; gap: 12px;
+      margin-bottom: 28px;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .count-box {
+      display: flex; flex-direction: column; align-items: center;
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 16px 20px;
+      min-width: 72px;
+    }
+    .count-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.1rem; font-weight: 900;
+      color: var(--gold-light); line-height: 1;
+    }
+    .count-label {
+      font-size: 0.6rem; letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-top: 4px;
+    }
+
+    /* ── PROGRESS ──────────────────────────────── */
+    .progress-wrap { width: 100%; margin-bottom: 28px; }
+    .progress-label {
+      display: flex; justify-content: space-between;
+      font-size: 0.7rem; color: #888;
+      margin-bottom: 6px;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .progress-track {
+      height: 6px; background: #e8e8e8;
+      border-radius: 3px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; width: 72%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius: 3px;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.7} }
+
+    /* ── SERVICE PILLS ─────────────────────────── */
+    .services {
+      display: flex; flex-wrap: wrap;
+      gap: 9px; justify-content: center;
+      margin-bottom: 28px;
+    }
+    .service-pill {
+      display: flex; align-items: center; gap: 7px;
+      padding: 8px 16px; border-radius: 40px;
+      border: 1.5px solid rgba(201,168,76,0.5);
+      background: #fdfaf3;
+      font-size: 0.78rem; font-weight: 600;
+      color: var(--navy);
+      transition: background .2s, border-color .2s;
+    }
+    .service-pill:hover { background: rgba(201,168,76,0.12); border-color: var(--gold); }
+
+    /* ── NOTIFY ────────────────────────────────── */
+    .notify-section { width: 100%; margin-bottom: 28px; text-align: center; }
+    .notify-section h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px;
+    }
+    .notify-row {
+      display: flex;
+      border: 1.5px solid rgba(201,168,76,0.6);
+      border-radius: 10px; overflow: hidden;
+    }
+    .notify-row input {
+      flex: 1; padding: 13px 16px;
+      background: #fdfaf3; border: none; outline: none;
+      color: var(--navy);
+      font-family: 'Open Sans', sans-serif; font-size: 0.88rem;
+    }
+    .notify-row input::placeholder { color: #aaa; }
+    .notify-row button {
+      padding: 13px 20px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border: none; cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 1px; color: var(--navy-dark);
+      text-transform: uppercase; transition: opacity .2s; white-space: nowrap;
+    }
+    .notify-row button:hover { opacity: 0.85; }
+
+    /* ── CONTACT ───────────────────────────────── */
+    .contact-info {
+      display: flex; flex-wrap: wrap;
+      gap: 16px; justify-content: center; margin-bottom: 24px;
+    }
+    .contact-chip { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #555; }
+    .chip-icon {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.35);
+      display: flex; align-items: center; justify-content: center; font-size: 0.85rem;
+    }
+    .contact-chip a { color: var(--gold); text-decoration: none; }
+    .contact-chip a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ────────────────────────────────── */
+    .footer {
+      text-align: center; font-size: 0.65rem;
+      color: #aaa; line-height: 1.9; max-width: 480px;
+    }
+    .footer strong { color: #888; }
+
+    /* ── ANIMATIONS ────────────────────────────── */
+    .fade-up {
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp .65s ease forwards;
+    }
+    .card > *:nth-child(1)  { animation-delay:.05s }
+    .card > *:nth-child(2)  { animation-delay:.15s }
+    .card > *:nth-child(3)  { animation-delay:.28s }
+    .card > *:nth-child(4)  { animation-delay:.40s }
+    .card > *:nth-child(5)  { animation-delay:.52s }
+    .card > *:nth-child(6)  { animation-delay:.64s }
+    .card > *:nth-child(7)  { animation-delay:.76s }
+    .card > *:nth-child(8)  { animation-delay:.88s }
+    .card > *:nth-child(9)  { animation-delay:1.0s }
+    .card > *:nth-child(10) { animation-delay:1.12s }
+    .card > *:nth-child(11) { animation-delay:1.24s }
+    @keyframes fadeUp { to { opacity:1; transform:none; } }
+
+    @media (max-width:520px) {
+      body { background:#fff; }
+      .card { padding:36px 20px 32px; border-radius:0; box-shadow:none; }
+      .count-box { padding:12px 14px; min-width:60px; }
+      .count-num  { font-size:1.7rem; }
+      .notify-row { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="gold-arc"></div>
+
+<main class="page">
+  <div class="card">
+
+    <div class="gold-line fade-up"></div>
+
+    <!-- LOGO -->
+    <div class="logo-block fade-up">
+      <div class="logo-block">
+    <img src="image\logo.jpeg" alt="" class="logo-img" width="150" height="100">
+</div>
+      <div class="logo-name">MONEY PLUS</div>
+      <div class="logo-tagline">Home Loans &nbsp;|&nbsp; Simplified &nbsp;|&nbsp; Trusted</div>
+    </div>
+
+    <!-- HEADLINE -->
+    <div class="headline fade-up">
+      <h1>Something <em>Exciting</em><br>is Coming Soon</h1>
+      <p>We're building a smarter home loan experience — tailored advice, trusted lenders, and a process that puts you first.</p>
+    </div>
+
+    <div class="divider fade-up"></div>
+
+    <!-- COUNTDOWN -->
+    <div class="countdown-wrap fade-up">
+      <div class="count-box"><div class="count-num" id="days">00</div><div class="count-label">Days</div></div>
+      <div class="count-box"><div class="count-num" id="hours">00</div><div class="count-label">Hours</div></div>
+      <div class="count-box"><div class="count-num" id="mins">00</div><div class="count-label">Mins</div></div>
+      <div class="count-box"><div class="count-num" id="secs">00</div><div class="count-label">Secs</div></div>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-wrap fade-up">
+      <div class="progress-label"><span>Website Progress</span><span>72%</span></div>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="services fade-up">
+      <div class="service-pill">🏡 Home Loans</div>
+      <div class="service-pill">📈 Investment Loans</div>
+      <div class="service-pill">🔄 Refinance</div>
+      <div class="service-pill">🤝 Personalised Service</div>
+      <div class="service-pill">🧭 Trusted Guidance</div>
+    </div>
+
+    <!-- NOTIFY -->
+    <div class="notify-section fade-up">
+      <h3>Notify Me When We Launch</h3>
+      <div class="notify-row">
+        <input type="email" placeholder="sanjay@mplusloans.com.au" />
+        <button type="button">Notify Me</button>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-info fade-up">
+      <div class="contact-chip">
+        <div class="chip-icon">🌐</div>
+        <a href="https://mplusloans.com.au" target="_blank">mplusloans.com.au.com.au</a>
+      </div>
+      <div class="contact-chip">
+        <div class="chip-icon">📋</div>
+        <span>Credit Rep. No. 551010</span>
+      </div>
+      <div class="contact-chip">
+        <div class="chip-icon">🛡️</div>
+        <span>ACL 384404</span>
+      </div>
+ <div class="contact-chip">
+        <div class="chip-icon">M</div>
+        <span>0478 735 513</span>
+      </div>
+    </div>
+
+    <div class="divider fade-up"></div>
+
+    <footer class="footer fade-up">
+      <strong>Money Plus</strong> is a Credit Representative (No. 551010) of RatesOnline.com.au Pty Ltd<br>
+      Australian Credit Licence 384404 &nbsp;·&nbsp; &copy; 2026 Money Plus. All rights reserved.
+    </footer>
+
+  </div>
+</main>
+
+<script>
+  const launch = new Date();
+  launch.setDate(launch.getDate() + 30);
+  function tick() {
+    const diff = Math.max(0, launch - new Date());
+    const pad = n => String(Math.floor(n)).padStart(2,'0');
+    document.getElementById('days').textContent  = pad(diff/86400000);
+    document.getElementById('hours').textContent = pad((diff%86400000)/3600000);
+    document.getElementById('mins').textContent  = pad((diff%3600000)/60000);
+    document.getElementById('secs').textContent  = pad((diff%60000)/1000);
+  }
+  tick(); setInterval(tick, 1000);
+
+  document.querySelector('.notify-row button').addEventListener('click', function() {
+    const input = document.querySelector('.notify-row input');
+    if (input.value.includes('@')) {
+      this.textContent = '✓ Done!';
+      this.style.background = 'linear-gradient(135deg,#4caf7c,#6dd49a)';
+      input.value = '';
+      setTimeout(() => { this.textContent = 'Notify Me'; this.style.background = ''; }, 3000);
+    } else {
+      input.style.outline = '2px solid #e05c5c';
+      setTimeout(() => input.style.outline = '', 1500);
+    }
+  });
+</script>
+</body>
+</html>
